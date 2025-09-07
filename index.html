@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiteMates - Connect Over Food</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFF8F2;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .text-brand-orange {
+            color: #FF6B35;
+        }
+        .bg-brand-orange {
+            background-color: #FF6B35;
+        }
+        .border-brand-orange {
+            border-color: #FF6B35;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hover-scale {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="text-gray-900">
+    <!-- Header & Hero Section -->
+    <header class="hero-bg text-white relative overflow-hidden">
+        <nav class="container mx-auto px-6 py-6 flex justify-between items-center">
+            <div>
+                <img src="https://i.ibb.co/Z6gVphSK/Bitemates.png" alt="BiteMates Logo" class="h-20">
+            </div>
+            <div class="hidden md:flex items-center space-x-10">
+                <a href="#features" class="text-lg hover:text-brand-orange transition duration-300">Why Choose Us</a>
+                <a href="#how-it-works" class="text-lg hover:text-brand-orange transition duration-300">How it Works</a>
+                <a href="#" class="bg-brand-orange text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition hover-scale">Get Started</a>
+            </div>
+            <button id="menu-btn" class="md:hidden z-30">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-0 left-0 w-full h-screen bg-gray-900 bg-opacity-95 flex flex-col items-center justify-center space-y-10 text-3xl z-20">
+            <a href="#features" class="hover:text-brand-orange transition duration-300">Why Choose Us</a>
+            <a href="#how-it-works" class="hover:text-brand-orange transition duration-300">How it Works</a>
+            <a href="#" class="bg-brand-orange text-white px-8 py-4 rounded-full font-semibold hover:bg-orange-600 transition hover-scale">Get Started</a>
+        </div>
+
+        <div class="container mx-auto px-6 text-center min-h-[90vh] flex flex-col justify-center items-center">
+            <h1 class="text-5xl md:text-7xl font-bold leading-tight reveal">Savor New Friendships</h1>
+            <p class="mt-6 text-xl md:text-2xl max-w-3xl reveal" style="transition-delay: 200ms;">Join a vibrant community where food lovers connect, share, and create unforgettable memories.</p>
+            <div class="mt-10 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 reveal" style="transition-delay: 400ms;">
+                <a href="#" class="bg-brand-orange text-white rounded-full px-6 py-3 flex items-center justify-center hover:bg-orange-600 transition hover-scale">
+                    <img src="https://www.apple.com/v/app-store/b/images/overview/icon_appstore__ev0z770zyxoy_large.png" alt="Apple App Store Icon" class="w-8 h-8 mr-3">
+                    <div>
+                        <p class="text-sm">Download on the</p>
+                        <p class="text-xl font-semibold">App Store</p>
+                    </div>
+                </a>
+                <a href="#" class="bg-brand-orange text-white rounded-full px-6 py-3 flex items-center justify-center hover:bg-orange-600 transition hover-scale">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play Icon" class="w-10 h-10 mr-3">
+                    <div>
+                        <p class="text-sm">GET IT ON</p>
+                        <p class="text-xl font-semibold">Google Play</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Why Choose Us Section -->
+        <section id="features" class="py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold reveal">Why BiteMates?</h2>
+                <p class="mt-6 text-lg text-gray-600 max-w-3xl mx-auto reveal">More than a social app, we're a platform for meaningful connections built on shared passions.</p>
+                <div class="mt-16 grid md:grid-cols-3 gap-10 text-left">
+                    <!-- Feature Card 1 -->
+                    <div class="bg-white p-10 rounded-2xl shadow-xl hover-scale reveal">
+                        <div class="bg-orange-50 text-brand-orange w-14 h-14 rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        </div>
+                        <h3 class="mt-6 text-2xl font-semibold">AI-Powered Matching</h3>
+                        <p class="mt-3 text-gray-600">Our advanced algorithm connects you with people who share your personality and culinary tastes.</p>
+                    </div>
+                    <!-- Feature Card 2 -->
+                    <div class="bg-white p-10 rounded-2xl shadow-xl hover-scale reveal" style="transition-delay: 200ms;">
+                        <div class="bg-orange-50 text-brand-orange w-14 h-14 rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+                        </div>
+                        <h3 class="mt-6 text-2xl font-semibold">Meaningful Conversations</h3>
+                        <p class="mt-3 text-gray-600">Spark deep connections with curated conversation starters and engaging icebreaker games.</p>
+                    </div>
+                    <!-- Feature Card 3 -->
+                    <div class="bg-white p-10 rounded-2xl shadow-xl hover-scale reveal" style="transition-delay: 400ms;">
+                        <div class="bg-orange-50 text-brand-orange w-14 h-14 rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                        </div>
+                        <h3 class="mt-6 text-2xl font-semibold">Safe & Welcoming</h3>
+                        <p class="mt-3 text-gray-600">Join an inclusive, moderated community designed for authentic connections.</p>
+                    </div>
+                </div>
+                <div class="mt-20 bg-white rounded-2xl shadow-xl max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x reveal">
+                    <div class="p-8 text-center">
+                        <p class="text-4xl font-bold counter" data-target="75000">0</p>
+                        <p class="text-gray-500 mt-2">Downloads</p>
+                    </div>
+                    <div class="p-8 text-center">
+                        <p class="text-4xl font-bold counter" data-target="5000">0</p>
+                        <p class="text-gray-500 mt-2">Matches Made</p>
+                    </div>
+                    <div class="p-8 text-center col-span-2 md:col-span-1">
+                        <p class="text-4xl font-bold counter" data-target="4.9" data-decimal="1">0</p>
+                        <p class="text-gray-500 mt-2">Avg. Rating</p>
+                    </div>
+                    <div class="p-8 text-center col-span-2 md:col-span-1">
+                        <p class="text-4xl font-bold">100%</p>
+                        <p class="text-gray-500 mt-2">Real Users</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="py-20 md:py-32 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-bold text-center reveal">How It Works</h2>
+                <div class="mt-16 space-y-20">
+                    <!-- Step 1 -->
+                    <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center reveal">
+                        <img src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1780&q=80" class="rounded-2xl shadow-lg w-full hover-scale" alt="Person taking a quiz on a laptop">
+                        <div>
+                            <span class="text-brand-orange font-semibold text-xl">01</span>
+                            <h3 class="text-3xl font-bold mt-3">Take Our Fun Quiz</h3>
+                            <p class="mt-4 text-lg text-gray-600">Answer engaging questions about your personality, interests, and favorite cuisines to find your perfect match.</p>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center reveal">
+                        <div class="md:order-2">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" class="rounded-2xl shadow-lg w-full hover-scale" alt="Group of friends looking at a phone">
+                        </div>
+                        <div class="md:order-1">
+                            <span class="text-brand-orange font-semibold text-xl">02</span>
+                            <h3 class="text-3xl font-bold mt-3">Connect with Your Tribe</h3>
+                            <p class="mt-4 text-lg text-gray-600">Our smart algorithm pairs you with like-minded foodies. Browse profiles and start chatting.</p>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center reveal">
+                        <img src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" class="rounded-2xl shadow-lg w-full hover-scale" alt="Friends enjoying a meal together">
+                        <div>
+                            <span class="text-brand-orange font-semibold text-xl">03</span>
+                            <h3 class="text-3xl font-bold mt-3">Meet Up & Make Memories</h3>
+                            <p class="mt-4 text-lg text-gray-600">Move from online chats to real-world meetups. Share meals, coffee, or foodie events to build lasting friendships.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials Section -->
+        <section class="py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold reveal">Stories from Our Community</h2>
+                <p class="mt-6 text-lg text-gray-600 max-w-3xl mx-auto reveal">Hear how BiteMates has brought people together over their love for food.</p>
+                <div class="mt-16 max-w-3xl mx-auto bg-white p-10 rounded-2xl shadow-xl hover-scale reveal">
+                    <div class="text-yellow-400 text-3xl">★★★★★</div>
+                    <p class="mt-6 text-lg italic text-gray-700">"BiteMates transformed my social life! I found friends who share my love for sushi, and our weekly meetups are the highlight of my week."</p>
+                    <div class="mt-8 flex items-center justify-center">
+                        <img src="https://i.pravatar.cc/150?u=a042581f4e29026704d" class="w-14 h-14 rounded-full" alt="Avatar of Sarah K.">
+                        <div class="ml-4 text-left">
+                            <p class="font-semibold text-lg">Sarah K. & Friends</p>
+                            <p class="text-gray-500 text-sm">Joined in 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="bg-brand-orange text-white">
+            <div class="container mx-auto px-6 py-20 md:py-28 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold reveal">Join the Foodie Community</h2>
+                <p class="mt-6 text-lg max-w-3xl mx-auto opacity-90 reveal">Your next best friend is waiting. Download BiteMates and start creating delicious memories today!</p>
+                <div class="mt-10 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 justify-center reveal">
+                    <a href="#" class="bg-white text-gray-900 rounded-full px-6 py-3 flex items-center justify-center hover:bg-gray-100 transition hover-scale">
+                        <img src="https://www.apple.com/v/app-store/b/images/overview/icon_appstore__ev0z770zyxoy_large.png" alt="Apple App Store Icon" class="w-8 h-8 mr-3">
+                        <div>
+                            <p class="text-sm">Download on the</p>
+                            <p class="text-xl font-semibold">App Store</p>
+                        </div>
+                    </a>
+                    <a href="#" class="bg-white text-gray-900 rounded-full px-6 py-3 flex items-center justify-center hover:bg-gray-100 transition hover-scale">
+                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play Icon" class="w-10 h-10 mr-3">
+                        <div>
+                            <p class="text-sm">GET IT ON</p>
+                            <p class="text-xl font-semibold">Google Play</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-200">
+        <div class="container mx-auto px-6 pt-16 pb-8">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div class="md:col-span-1 reveal">
+                    <img src="https://i.ibb.co/dJgQYxn/Bitemates.jpg" alt="BiteMates Logo" class="h-12 mb-4">
+                    <p class="text-gray-400">Connecting food lovers, one bite at a time.</p>
+                    <div class="mt-6 flex space-x-6">
+                        <a href="#" class="hover:text-brand-orange transition"><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg></a>
+                        <a href="#" class="hover:text-brand-orange transition"><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 2.525c.636-.247 1.363-.416 2.427-.465C9.793 2.013 10.147 2 12.315 2zm-1.002 3.705a.75.75 0 01.75-.75h1.5a.75.75 0 010 1.5h-1.5a.75.75 0 01-.75-.75zm2.32 2.72a.75.75 0 10-1.06-1.06.75.75 0 001.06 1.06zM12 6.835a5.165 5.165 0 100 10.33 5.165 5.165 0 000-10.33zM12 15.335a3.335 3.335 0 110-6.67 3.335 3.335 0 010 6.67z" clip-rule="evenodd"></path></svg></a>
+                    </div>
+                </div>
+                <div class="reveal" style="transition-delay: 200ms;">
+                    <h4 class="text-white font-semibold text-lg">Company</h4>
+                    <ul class="mt-4 space-y-3">
+                        <li><a href="#" class="hover:text-brand-orange transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-brand-orange transition">Careers</a></li>
+                        <li><a href="#" class="hover:text-brand-orange transition">Press</a></li>
+                    </ul>
+                </div>
+                <div class="reveal" style="transition-delay: 400ms;">
+                    <h4 class="text-white font-semibold text-lg">Support</h4>
+                    <ul class="mt-4 space-y-3">
+                        <li><a href="#" class="hover:text-brand-orange transition">FAQ</a></li>
+                        <li><a href="#" class="hover:text-brand-orange transition">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-brand-orange transition">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="reveal" style="transition-delay: 600ms;">
+                    <h4 class="text-white font-semibold text-lg">Legal</h4>
+                    <ul class="mt-4 space-y-3">
+                        <li><a href="#" class="hover:text-brand-orange transition">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-brand-orange transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2025 BiteMates. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile Menu Toggle
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Scroll Reveal Animation
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            
+            revealElements.forEach(el => {
+                revealObserver.observe(el);
+            });
+
+            // Counter Animation
+            const counterElements = document.querySelectorAll('.counter');
+            const speed = 200;
+
+            const counterObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = +el.getAttribute('data-target');
+                        const decimals = +el.getAttribute('data-decimal') || 0;
+                        
+                        const updateCount = () => {
+                            const count = +el.innerText;
+                            const inc = target / speed;
+
+                            if (count < target) {
+                                el.innerText = (count + inc).toFixed(decimals);
+                                setTimeout(updateCount, 10);
+                            } else {
+                                el.innerText = target.toFixed(decimals);
+                            }
+                        };
+                        
+                        updateCount();
+                        observer.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            counterElements.forEach(counter => {
+                counterObserver.observe(counter);
+            });
+        });
+    </script>
+</body>
+</html>
